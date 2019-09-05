@@ -1,0 +1,14 @@
+The Psychic Game Psuedo
+
+Need to display title, directions, wins, losses, guesses and guesses so far as individual lines
+
+    wins, losses, guesses left must update with each guess played
+
+computer must make guess at beginning of round, user has 10 guesses to achieve letter that computer thought of
+
+    guesses so far must also display the letters that the user guessed while playing
+
+wins must move up by value of 1 when player guesses correctly withing alloted amount of guesses
+
+    failure to guess must increase value of losses by 1 and reset the game for additional play
+
