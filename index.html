@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psychic Game of Letter Wiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-G3Fme2BM4boCE9tHx9zHvcxaQoAkksPQa/8oyn1Dzqv7gdcXChereUsXGx6LtbqA"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
-    <h1>The Psychic Game of Letter Wiz</h1>
-</hr>
-<div>
-    <p id="directions">Guess what letter I'm thinking of, choose wisely</p>
-    <p id="wins"></p>
-    <p id="losses"></p>
-    <p id="guess-amount"></p>
-    <p id="user-choices"></p>
-</div>
-    
-    <script type="text/javascript" src="game.js"></script>
+    <div class="row">
+        <section class="top-bar col-md-12">
+            <h1><strong>The Psychic Game of Letter Wiz</strong></h1>
+        </section>
+    </div>
+    <hr>
+    <div class="game-place">
+        <h3>Guess what letter I'm thinking of, choose wisely my friend</h3>
+    </br>
+        <p id="wins"></p>
+        <p id="losses"></p>
+        <p id="guess-amount"></p>
+        <p id="user-choice"></p>
+    </div>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>

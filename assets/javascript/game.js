@@ -1,0 +1,32 @@
+// Global Variables
+var gameChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
+var wins = 0;
+var losses = 0;
+var guessRemaining = 15;
+
+// Var for HTML rewrite
+var winsText = document.getElementById("wins");
+var lossesText = document.getElementById("losses");
+var guessNumText = document.getElementById("guess-amount");
+var userChoiceText = document.getElementById("user-choice");
+
+// Event Watcher
+document.onkeyup = function (event) {
+    
+    var userGuess = event.key;
+    var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)]
+
+    if (userGuess === computerGuess) {
+        wins++;
+    } else {
+        losses++;
+        guessRemaining--;
+    }
+
+    // Write to HTML
+    userChoiceText.textContent = "You chose: " + userGuess;
+    winsText.textContent = "Wins: " + wins;
+    lossesText.textContent = "Losses: " + losses;
+    guessNumText.textContent = "Remaining guesses: " + guessRemaining;
+
+}

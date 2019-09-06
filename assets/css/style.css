@@ -1,0 +1,12 @@
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.top-bar {
+    text-align: center;
+    padding: 3rem;
+}
+
+.game-place {
+    text-align: center;
+}
