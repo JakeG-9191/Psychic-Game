@@ -19,7 +19,6 @@ document.onkeyup = function (event) {
     if (userGuess === computerGuess) {
         wins++;
     } else {
-        losses++;
         guessRemaining--;
     }
 
@@ -27,6 +26,7 @@ document.onkeyup = function (event) {
     userChoiceText.textContent = "You chose: " + userGuess;
     winsText.textContent = "Wins: " + wins;
     lossesText.textContent = "Losses: " + losses;
-    guessNumText.textContent = "Remaining guesses: " + guessRemaining;
+    guessNumText.textContent = "Guesses remaining: " + guessRemaining;
 
 }
+
