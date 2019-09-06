@@ -9,12 +9,17 @@ var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
 var guessNumText = document.getElementById("guess-amount");
 var userChoiceText = document.getElementById("user-choice");
+var letterGuessCountText = document.getElementById("past-choice");
 
 // Event Watcher
+var letterGuessCount = [];
+
 document.onkeyup = function (event) {
-    
+
     var userGuess = event.key;
     var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)]
+
+    letterGuessCount.push(userGuess);
 
     if (userGuess === computerGuess) {
         wins++;
@@ -27,6 +32,7 @@ document.onkeyup = function (event) {
     winsText.textContent = "Wins: " + wins;
     lossesText.textContent = "Losses: " + losses;
     guessNumText.textContent = "Guesses remaining: " + guessRemaining;
+    letterGuessCountText.textContent = "Your previous choices included: " + letterGuessCount;
 
 }
 
