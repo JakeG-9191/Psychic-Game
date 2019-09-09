@@ -15,56 +15,38 @@ var letterGuessCountText = document.getElementById("past-choice");
 
 // Event Watcher & Game Launch 
 
-document.onkeyup = function (newGame) {
+document.onkeyup = function (event) {
     var userGuess = event.key;
+    console.log("user " + userGuess);
+
     letterGuessCount.push(userGuess);
 
-    if (guessRemaining > 0) {
+    if (gameChoices.includes(userGuess) || guessRemaining >= 0) {
 
         var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)];
         console.log("comp " + computerGuess);
 
+        if (userGuess === computerGuess) {
+            wins++;
+            gameReset();
+        } else if (guessRemaining === 0) {
+            losses++;
+            gameReset();
+        } else {
+            guessRemaining--;
+        }
+
+        // Write to HTML
+        userChoiceText.textContent = "You chose: " + userGuess;
+        winsText.textContent = "Wins: " + wins;
+        lossesText.textContent = "Losses: " + losses;
         guessNumText.textContent = "Guesses remaining: " + guessRemaining;
         letterGuessCountText.textContent = "Your previous choices included: " + letterGuessCount;
-        userChoiceText.textContent = "You chose: " + userGuess;
 
-        if (userGuess === computerGuess) {
-        wins++;
-        winsText.textContent = "Wins: " + wins;
-        newGame();
+        function gameReset(){
+            (guessRemaining = 15);
         }
-    } else if (guessRemaining === 0) {
-        losses++;
-        lossesText.textContent = "Losses: " + losses;
-        newGame();
+
+
     }
 }
-
-// if (guessRemaining > 0) {
-
-//     var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)];
-
-//     console.log("comp " + computerGuess);
-
-//     document.onkeyup = function (event) {
-
-//         var userGuess = event.key;
-//         console.log("user " + userGuess);
-
-//         letterGuessCount.push(userGuess);
-
-//         if (userGuess === computerGuess) {
-//             wins++;
-//         } else {
-//             guessRemaining--;
-//         }
-//     }
-
-// }
-
-// // Write to HTML
-// userChoiceText.textContent = "You chose: " + userGuess;
-// winsText.textContent = "Wins: " + wins;
-// lossesText.textContent = "Losses: " + losses;
-// guessNumText.textContent = "Guesses remaining: " + guessRemaining;
-// letterGuessCountText.textContent = "Your previous choices included: " + letterGuessCount;
