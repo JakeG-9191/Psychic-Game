@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    margin: 2% 5%;
+    width: 75%;
+    background-image: url("https://www.monsterchildren.com/wp-content/uploads/2018/04/monster-children-psychic-1068x571.jpg");
 }
 
 h1 {
@@ -22,18 +23,26 @@ h3 {
     font-size: 28px;
 }
 
-.game-place {
-    margin: 0 5%;
-}
-
 #wins {
    color: goldenrod;
+   font-size: 24px;
 }
 
 #losses {
     color: red;
+    font-size: 20px;
 }
 
 #guess-amount {
     color: green;
+    font-size: 20px;
+}
+
+#past-choice {
+    letter-spacing: 5px;
+}
+
+.jumbotron {
+    margin-left: 30%;
+    margin-top: 5%;
 }

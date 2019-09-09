@@ -10,6 +10,7 @@ var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
 var guessNumText = document.getElementById("guess-amount");
 var userChoiceText = document.getElementById("user-choice");
+var otherLetterText = document.getElementById("other-letters");
 var letterGuessCountText = document.getElementById("past-choice");
 
 var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)];
@@ -21,9 +22,11 @@ document.onkeyup = function (event) {
     var userGuess = event.key;
     console.log("user " + userGuess);
 
-    letterGuessCount.push(userGuess);
+    // letterGuessCount.push(userGuess);
 
     if (gameChoices.includes(userGuess) || guessRemaining >= 0) {
+
+        letterGuessCount.push(userGuess);
 
         if (userGuess === computerGuess) {
             wins++;
@@ -40,7 +43,8 @@ document.onkeyup = function (event) {
         winsText.textContent = "Wins: " + wins;
         lossesText.textContent = "Losses: " + losses;
         guessNumText.textContent = "Guesses remaining: " + guessRemaining;
-        letterGuessCountText.textContent = "Your previous choices included: " + letterGuessCount;
+        otherLetterText.textContent = "Your Previous Choices Included: "
+        letterGuessCountText.textContent = letterGuessCount;
 
         function gameReset() {
             (guessRemaining = 15);
