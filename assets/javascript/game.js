@@ -1,6 +1,5 @@
 // Global Variables
-// var gameChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
-var gameChoices = ["a", "p"]
+var gameChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
 var wins = 0;
 var losses = 0;
 var guessRemaining = 15;
@@ -13,6 +12,9 @@ var guessNumText = document.getElementById("guess-amount");
 var userChoiceText = document.getElementById("user-choice");
 var letterGuessCountText = document.getElementById("past-choice");
 
+var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+console.log("comp " + computerGuess);
+
 // Event Watcher & Game Launch 
 
 document.onkeyup = function (event) {
@@ -22,9 +24,6 @@ document.onkeyup = function (event) {
     letterGuessCount.push(userGuess);
 
     if (gameChoices.includes(userGuess) || guessRemaining >= 0) {
-
-        var computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)];
-        console.log("comp " + computerGuess);
 
         if (userGuess === computerGuess) {
             wins++;
@@ -43,10 +42,12 @@ document.onkeyup = function (event) {
         guessNumText.textContent = "Guesses remaining: " + guessRemaining;
         letterGuessCountText.textContent = "Your previous choices included: " + letterGuessCount;
 
-        function gameReset(){
+        function gameReset() {
             (guessRemaining = 15);
+            (computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)]);
+            console.log("comp 2 " + computerGuess);
+            (letterGuessCount = []);
         }
-
 
     }
 }

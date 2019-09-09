@@ -1,12 +1,39 @@
+body {
+    text-align: center;
+    margin: 2% 5%;
+}
+
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 48px;
 }
 
 .top-bar {
-    text-align: center;
     padding: 3rem;
 }
 
+p {
+    font-size: 18px;
+    padding: 1%;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+}
+
 .game-place {
-    text-align: center;
+    margin: 0 5%;
+}
+
+#wins {
+   color: goldenrod;
+}
+
+#losses {
+    color: red;
+}
+
+#guess-amount {
+    color: green;
 }
