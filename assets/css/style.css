@@ -1,7 +1,7 @@
 body {
     text-align: center;
     width: 75%;
-    background-image: url("https://www.monsterchildren.com/wp-content/uploads/2018/04/monster-children-psychic-1068x571.jpg");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdwCOTaNKLk95BY38z2oOPS19V72bnjvjqjG5g1Np9boNvfXsP");
 }
 
 h1 {
@@ -45,4 +45,13 @@ h3 {
 .jumbotron {
     margin-left: 30%;
     margin-top: 5%;
+    padding: 0rem 2rem 2rem;
+}
+
+.list-group-item {
+    padding: 0;
+}
+
+.game-place {
+    padding-top: 2rem;
 }
