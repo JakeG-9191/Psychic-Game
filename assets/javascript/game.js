@@ -2,7 +2,7 @@
 var gameChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
 var wins = 0;
 var losses = 0;
-var guessRemaining = 10;
+var guessRemaining = 15;
 var letterGuessCount = [];
 
 // Var for HTML rewrite
@@ -46,7 +46,7 @@ document.onkeyup = function (event) {
         letterGuessCountText.textContent = letterGuessCount;
         // Game function reset to continue game after win or loss 
         function gameReset() {
-            (guessRemaining = 10);
+            (guessRemaining = 15);
             (computerGuess = gameChoices[Math.floor(Math.random() * gameChoices.length)]);
             console.log("comp 2 " + computerGuess);
             (letterGuessCount = []);
